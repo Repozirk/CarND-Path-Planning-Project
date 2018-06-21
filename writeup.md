@@ -21,8 +21,8 @@ The project was created with the Udacity [Starter Code](https://github.com/udaci
 - `README.md` Description of the Project by Udacity
 - `writeup.md` for submission of this Project
 #####
-##Result
-####Prediction
+## Result
+#### Prediction
 With the  solution from the Q&A-video provided by Udacity, the trajectory generation was done with creating smooth splines by help of spline.h. 
 Controlling the veloctiy of the car, depending on existing vehicles in front of the car, was performed with several steps. First tthe future location of the detected vehicles on the same lane have been predicted by a linear motion model (main.cpp, line 348)
 
@@ -32,7 +32,7 @@ double pred_car_s_sf = car_s_sf;
 pred_car_s_sf += ((double)prev_size * 0.02 * car_speed_sf);
 ```
 #####
-####Cost Function
+#### Cost Function
 Then the closest vehicle in front of the car has to be extracted out of the sensor fusion data. With this information, the speed adjustment was done depending on the predicted distance to the closest vehicle  (main.cpp, line 361).
 
 
@@ -92,7 +92,7 @@ To avoid collisions during lane change,  the total cost  is increased to high va
 
 With this cost increase, a  lane change is only performed, when there is no chance of collision.
 #####
-####Lane Change
+#### Lane Change
 To avoid high frequency lane changes, a minium distance of 150m is necessary to get the permission for the next lane Change.
 The decision of a lane change is done with the logic below by comparison of total cost for "Keep Lane",. "Lane Change Left" and "Lane Change Right" (main.cpp, line 605).
 
@@ -116,7 +116,7 @@ The decision of a lane change is done with the logic below by comparison of tota
 ```
 
 #####
-####Summary
+#### Summary
 The car is able to drive at least 4.32 miles without incident
 ![alt text][image1] 
 
