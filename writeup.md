@@ -32,7 +32,7 @@ double pred_car_s_sf = car_s_sf;
 pred_car_s_sf += ((double)prev_size * 0.02 * car_speed_sf);
 ```
 #####
-#### Cost Function
+#### Speed Adjustment
 Then the closest vehicle in front of the car has to be extracted out of the sensor fusion data. With this information, the speed adjustment was done depending on the predicted distance to the closest vehicle  (main.cpp, line 361).
 
 
@@ -58,7 +58,8 @@ Then the closest vehicle in front of the car has to be extracted out of the sens
                     too_close = false;
                   }
 ```
-
+#####
+#### Cost Function
 There are 3 cost functions for the situation following a vehicle which result in a sum cost for keeping the lane (main.cpp, line 382). The first cost function depends on the relation target speed and speed limit penalizing low speed.
 
 ```
